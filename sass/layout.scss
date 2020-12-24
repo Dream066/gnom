@@ -1,0 +1,48 @@
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.background-header {
+  border-top: 3px solid $orange;
+  background: url(../img/background.jpg);
+  padding: 0 15px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: -15px;
+}
+
+$breakpoints: ('sm'576, 'md'1024);
+
+[class^="col-"] {
+  flex-grow: 0;
+  flex-shrink: 1;
+  padding: 15px;
+}
+
+@mixin cols ($size: '') {
+  $root: '.col';
+
+  @if ($size!='') {
+      $root: '.col-#{$size}';
+  }
+
+  #{$root} {
+      @for $i from 1 through 12 {
+          &-#{$i} {
+              flex-basis: (100%/12*$i);
+          }
+      }
+  }
+}
+
+@include cols();
+
+@each $name, $breakpoint in $breakpoints {
+  @media (min-width: #{$breakpoint}) {
+      @include cols($name);
+  }
+}

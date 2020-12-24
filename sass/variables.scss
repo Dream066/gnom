@@ -1,0 +1,15 @@
+body {
+  --black: #000;
+  --light-black: #26272d;
+  --orange: #db862a;
+  --white: #ffffff;
+  --white-bg: #f3f2f2;
+  --grey: #CACACA;
+}
+
+$black : var(--black);
+$light-black : var(--light-black);
+$white : var(--white);
+$white-bg : var(--white-bg);
+$orange : var(--orange);
+$grey : var(--grey);

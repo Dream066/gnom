@@ -1,0 +1,22 @@
+.burger__list {
+display: none;
+position: absolute;
+top: -26px;
+right: 20px;
+width: 100px;
+    &-item {
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+
+}
+
+.active {
+    display: block;
+}
+
+.opened {
+    width: 30px;
+    height: 3px;
+}

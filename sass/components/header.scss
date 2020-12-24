@@ -1,0 +1,115 @@
+.header {
+padding-top: 28px;
+padding-bottom: 156px;
+color: $white;
+@media (max-width: 1024px) {
+    padding-bottom: 80px;
+}
+@media (max-width: 576px) {
+    padding-bottom: 30px;
+}
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+    }
+
+    &__list {
+        position: relative;
+        display: flex;
+        font-size: 13px;
+        padding-left: 36px;
+        padding-top: 5px;
+        letter-spacing: 1px;
+        @media (max-width: 1024px) {
+            display: none;
+        }
+
+        &-link {
+            position: relative;
+            &:hover {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    display: block;
+                    left: 0;
+                    right: 0;
+                    height: 2px;
+                    background-color: $orange;
+                }
+            }
+        }
+    }
+
+    &__list-item {
+        text-transform: uppercase;
+        &:not(:last-child) {
+            margin-right: 65px;
+        }
+    }
+
+    &__tel {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        @media (max-width: 576px) {
+           display: none;
+        }
+    }
+
+    &__burger {
+        display: none;
+        position: relative;
+        width: 30px;
+        height: 3px;
+        
+        background-color: $white;
+        @media (max-width: 1024px) {
+        display: block;
+        }
+        
+        @media (max-width: 576px) {
+        width: 25px;
+        }
+        &::before {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: $white;
+        top: 10px;
+        @media (max-width: 576px) {
+        width: 25px;
+        top: 8px;
+        }
+        }
+        &::after   {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 30px;
+        height: 3px;
+        background-color: $white;
+        top: -10px;
+        @media (max-width: 576px) {
+        width: 25px;
+        top: -8px;
+        }
+    }
+    &-click {
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            top: -24px;
+            left: -11px;
+            width: 50px;
+            height: 50px;
+        }
+    }
+    }
+}
